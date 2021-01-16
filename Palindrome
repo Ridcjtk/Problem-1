@@ -1,0 +1,23 @@
+def is_palindrome(input_str):
+    """ Given a string, determine if it is a palindrome.
+        Whitespaces, character-casing, and non-alphanumeric
+        characters are all ignored.
+
+        Parameters
+        ----------
+        s: str
+            Input string
+
+        Returns
+        -------
+        bool
+    """
+    filtered_str = "".join(c.lower() for c in input_str if c.isalnum())
+    return filtered_str == filtered_str[::-1]
+    
+    Personal notes: 
+    
+   c.lower takes care of capitalization
+   str.join combines the words to get rid of spaces
+   filtered_str == filtered_str[::-1] sifts the string from forward and then to reverse -> boolean statement so returns true/false automatically
+   
