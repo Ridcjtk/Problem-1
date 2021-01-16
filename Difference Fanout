@@ -1,0 +1,30 @@
+def difference_fanout(l, fanout):
+    """ Return a list of differences for
+        each value with its following terms
+
+        Parameters
+        ----------
+        l: List[Number]
+            Input list of base numbers.
+
+        fanout: int
+            Number of neighbors to compute differences against.
+
+        Returns
+        -------
+        List[List[Number]]
+    """
+    all_fanouts = []  # will store each list of fanouts
+    for i, base_number in enumerate(l):
+        # `base_fanout` will store the differences between
+        # the base number's successive neighbors and base number
+        base_fanout = []
+        for neighbor in l[i+1: i+1+fanout]:
+            base_fanout.append(neighbor - base_number)
+
+        all_fanouts.append(base_fanout)
+    return all_fanouts
+    
+    The Fan out code helps to continually add new numbers into the code thus creating the fan out effect
+    
+    Base fan out is at - in order to set a bar
