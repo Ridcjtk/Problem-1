@@ -25,3 +25,10 @@ def simple_merge_max_mappings(dict1, dict2):
         if key not in merged or dict2[key] > merged[key]:
             merged[key] = dict2[key]
     return merged
+
+
+Main problem is merging two dictionaries without interferring with the original. 
+
+Marge_max_mappings + dict(dict1) ensures that a new dictionaries is created each time dictionary 1 and 2 is combed over.
+
+Adds in dict2 with dict 1 using merged[key] = dict2[key]
