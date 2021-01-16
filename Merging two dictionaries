@@ -1,0 +1,27 @@
+# merging two dictionaries, retaining the greatest value among
+# common keys
+>>> dict1 = {'bananas': 7, 'apples': 3, 'pears': 14}
+>>> dict2 = {'bananas': 3, 'apples': 6, 'grapes': 9}
+>>> merge_max_mappings(dict1, dict2)
+{'bananas': 7, 'apples': 6, 'pears': 14, 'grapes': 9}
+
+"""answer
+
+def simple_merge_max_mappings(dict1, dict2):
+    """ Merges two dictionaries based on the largest value in a given mapping.
+
+    Parameters
+    ----------
+    dict1 : Dict[Any, Comparable]
+    dict2 : Dict[Any, Comparable]
+
+    Returns
+    -------
+    Dict[Any, Comparable]
+        The merged dictionary
+    """
+    merged = dict(dict1)
+    for key in dict2:
+        if key not in merged or dict2[key] > merged[key]:
+            merged[key] = dict2[key]
+    return merged
