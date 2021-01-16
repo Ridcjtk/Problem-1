@@ -1,0 +1,17 @@
+    def within_margin_percentage(desired, actual, margin):
+    
+    count = 0  # tally of how values are within margin
+    total = len(desired)
+    for i in range(total):
+        if abs(desired[i] - actual[i]) <= margin:
+            count += 1  # Equivalent to `count = count + 1`
+    return count / total if total > 0 else 1.0
+    
+    >>> within_margin_percentage(desired=[10.0, 5.0, 8.0, 3.0, 2.0],
+...                          actual= [10.3, 5.2, 8.4, 3.0, 1.2],
+...                          margin=0.5)
+0.8
+
+This code helps to evaluate how far the margin of error is from actual vs. desired. 
+
+Total encapsulates the data to us an if/then statement to compare the total to the count 
